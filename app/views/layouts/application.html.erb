@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wedding</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p id="notice"><%= notice%></p>
+  <%= yield %>
+  <%= link_to "Logout", logout_path %>
+</body>
+</html>

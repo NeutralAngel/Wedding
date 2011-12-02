@@ -1,0 +1,59 @@
+<%= nested_form_for(@rsvp) do |f| %>
+  <% if @rsvp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this rsvp from being saved:</h2>
+
+      <ul>
+      <% @rsvp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.fields_for :user do |builder| %>
+      <p>
+      <%= builder.label "First name" %><br />
+      <%= builder.text_field :first_name, :onchange => "copyName()" %> <br />
+      <%= builder.label "Last name" %><br />
+      <%= builder.text_field :last_name %> <br />
+      <%= builder.label "Email" %><br />
+      <%= builder.text_field :email %> <br />
+      <%= builder.label :password %>
+      <%= builder.password_field :password %>
+      <%= builder.label :password_confirmation %>
+      <%= builder.password_field :password_confirmation %>
+      </p>
+     <% end %>
+     <%= f.fields_for :guests do |builder| %>
+      <p>
+      <%= builder.label "Name" %><br />
+      <%= builder.text_field :name %> <br />
+      <%= field_set_tag 'Going to the wedding?' do %>
+        <%= builder.radio_button(:wedding, "yes") %>
+        <%= builder.label(:wedding_yes, "Yes") %>
+        <%= builder.radio_button(:wedding, "no") %>
+        <%= builder.label(:wedding_no, "No") %>
+        <%= builder.radio_button(:wedding, "maybe") %>
+        <%= builder.label(:wedding_maybe, "Maybe") %>
+      <% end %>
+      <%= field_set_tag 'Going to the reception?' do %>
+        <%= builder.radio_button(:reception, "yes") %>
+        <%= builder.label(:reception_yes, "Yes") %>
+        <%= builder.radio_button(:reception, "no") %>
+        <%= builder.label(:reception_no, "No") %>
+        <%= builder.radio_button(:reception, "maybe") %>
+        <%= builder.label(:reception_maybe, "Maybe") %>
+      <% end %>
+       <%= builder.link_to_remove "Remove this guest" %>
+      </p>
+    <% end %>
+    <p><%= f.link_to_add "Add a guest", :guests %></p>
+     <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

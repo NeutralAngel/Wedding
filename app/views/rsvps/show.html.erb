@@ -1,0 +1,17 @@
+<p>
+  <b>Comment:</b>
+  <%= @rsvp.comment %>
+</p>
+<ul>
+    <li><%=h @rsvp.user.first_name %></li>
+    <li><%=h @rsvp.user.last_name %></li>
+    <li><%=h @rsvp.user.email %></li>
+    <% for guest in @rsvp.guests %>
+      <li><%=h guest.name %></li>
+      <li>Going to the wedding: <%=h guest.wedding %></li>
+      <li>Going to the reception: <%=h guest.reception %></li>
+    <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_rsvp_path(@rsvp) %> |
+<%= link_to 'Back', rsvps_path %>
