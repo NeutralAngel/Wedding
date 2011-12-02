@@ -15,3 +15,5 @@
 /tmp
 
 /swp/*.swp
+
+/config/database.yml
