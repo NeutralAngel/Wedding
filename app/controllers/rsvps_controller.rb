@@ -48,6 +48,7 @@ class RsvpsController < ApplicationController
     @rsvp = Rsvp.new(params[:rsvp])
     respond_to do |format|
       if @rsvp.save
+        session[:user_id] = @rsvp.user.id 
         format.html { redirect_to @rsvp, notice: 'Rsvp was successfully created.' }
         format.json { render json: @rsvp, status: :created, location: @rsvp }
       else
