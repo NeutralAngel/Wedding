@@ -1,4 +1,6 @@
 Wedding::Application.routes.draw do
+
+  root :to => "pages#home"
   match "home" => "pages#home"
   match "wedding" => "pages#wedding"
   match "registry" => "pages#registry"
@@ -6,11 +8,11 @@ Wedding::Application.routes.draw do
   match "honeymoon" => "pages#honeymoon"
   match "login" => "sessions#new"
   match "logout" => "sessions#destroy"
-  match "rsvp" => "rsvps#new"
 
-  root :to => "rsvps#index"
   resources :rsvps
   resources :sessions
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,7 +1,7 @@
-<%= nested_form_for(@rsvp) do |f| %>
+<%= nested_form_for(@rsvp, :html => { :id => "beautiful" }) do |f| %>
   <% if @rsvp.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this rsvp from being saved:</h2>
+      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this RSVP from being saved:</h2>
 
       <ul>
       <% @rsvp.errors.full_messages.each do |msg| %>
@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.fields_for :user do |builder| %>
+  <div id="form-wrap">
+    <% if !@current_user %>
+      <%= field_set_tag 'Login Information' do %>
+      <%= f.fields_for :user do |builder| %>
       <p>
-      <%= builder.label "First name" %><br />
-      <%= builder.text_field :first_name, :onchange => "copyName()" %> <br />
-      <%= builder.label "Last name" %><br />
-      <%= builder.text_field :last_name %> <br />
+      <%= builder.label "Your Name" %><br />
+      <%= builder.text_field :name, :onchange => "copyName()" %> <br />
       <%= builder.label "Email" %><br />
       <%= builder.text_field :email %> <br />
       <%= builder.label :password %>
@@ -25,7 +25,10 @@
       <%= builder.label :password_confirmation %>
       <%= builder.password_field :password_confirmation %>
       </p>
-     <% end %>
+      <% end %>
+      <% end %>
+   <% end %>
+     <%= field_set_tag 'Guests' do %>
      <%= f.fields_for :guests do |builder| %>
       <p>
       <%= builder.label "Name" %><br />
@@ -50,6 +53,7 @@
       </p>
     <% end %>
     <p><%= f.link_to_add "Add a guest", :guests %></p>
+    <% end %>
      <%= f.label :comment %><br />
     <%= f.text_field :comment %>
   </div>

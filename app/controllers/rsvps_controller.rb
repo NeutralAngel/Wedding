@@ -1,7 +1,7 @@
 class RsvpsController < ApplicationController
 
   before_filter :authenticate, :only => [:edit, :update]
-
+  
   # GET /rsvps
   # GET /rsvps.json
   def index
@@ -27,6 +27,7 @@ class RsvpsController < ApplicationController
   # GET /rsvps/new
   # GET /rsvps/new.json
   def new
+    redirect_to edit_rsvp_path(User.find(session[:user_id]).rsvp_id) and return if current_user
     @rsvp = Rsvp.new
     @rsvp.build_user
     @rsvp.guests.build
@@ -45,12 +46,14 @@ class RsvpsController < ApplicationController
   # POST /rsvps.json
   def create
     @rsvp = Rsvp.new(params[:rsvp])
-
     respond_to do |format|
       if @rsvp.save
         format.html { redirect_to @rsvp, notice: 'Rsvp was successfully created.' }
         format.json { render json: @rsvp, status: :created, location: @rsvp }
       else
+      	if @rsvp.errors.full_messages.include?("User email login")
+          redirect_to login_path, notice: 'That email already has an RSVP. Please login to edit your RSVP.' and return
+        end
         format.html { render action: "new" }
         format.json { render json: @rsvp.errors, status: :unprocessable_entity }
       end
