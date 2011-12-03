@@ -1,9 +1,10 @@
-<footer id="pageFooter">
-<%= debug(params) %>
+<footer id="pageFooter" class="prepend-5 clear">
+<ul class="foot">
 <% if signed_in? %>
   <li>Signed in as <%= current_user.email %> <%= link_to "Logout", logout_path %></li>
 <% else %>
   <li><%= link_to "Login", login_path %></li>
 <% end %>
+</ul>
 </footer>
 

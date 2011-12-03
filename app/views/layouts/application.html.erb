@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>N+J Wedding | <%= @title %></title>
+  <title>N+J | <%= @title %></title>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/stylesheets' %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
+  <div id="wrapper" class="container">
   <%= render 'layouts/header' %>
   <p id="notice"><%= notice%></p>
+  <div id="main" class="span-20 push-2 last">
   <%= yield %>
+  </div>
   <%= render 'layouts/footer' %>
   </div>
 </body>

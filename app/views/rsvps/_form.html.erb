@@ -13,36 +13,36 @@
 
   <div id="form-wrap">
     <% if !@current_user %>
-      <%= field_set_tag 'Login Information' do %>
+      <%= field_set_tag 'Login Information', :class => "leg span-9 prepend-1 push-1 last prepend-top" do %>
       <%= f.fields_for :user do |builder| %>
       <p>
       <%= builder.label "Your Name" %><br />
       <%= builder.text_field :name, :onchange => "copyName()" %> <br />
       <%= builder.label "Email" %><br />
       <%= builder.text_field :email %> <br />
-      <%= builder.label :password %>
-      <%= builder.password_field :password %>
-      <%= builder.label :password_confirmation %>
-      <%= builder.password_field :password_confirmation %>
+      <%= builder.label :password %> <br />
+      <%= builder.password_field :password %> <br />
+      <%= builder.label :password_confirmation %> <br />
+      <%= builder.password_field :password_confirmation %> <br />
       </p>
       <% end %>
       <% end %>
    <% end %>
-     <%= field_set_tag 'Guests' do %>
+     <%= field_set_tag 'Guests', :class => "clear leg span-9 prepend-1 push-1 last prepend-top" do %>
      <%= f.fields_for :guests do |builder| %>
       <p>
       <%= builder.label "Name" %><br />
       <%= builder.text_field :name %> <br />
-      <%= field_set_tag 'Going to the wedding?' do %>
-        <%= builder.radio_button(:wedding, "yes") %>
+      <%= field_set_tag 'Going to the wedding?', :class => "questions" do %>
+        <%= builder.radio_button(:wedding, "yes", :checked => true) %>
         <%= builder.label(:wedding_yes, "Yes") %>
         <%= builder.radio_button(:wedding, "no") %>
         <%= builder.label(:wedding_no, "No") %>
         <%= builder.radio_button(:wedding, "maybe") %>
         <%= builder.label(:wedding_maybe, "Maybe") %>
       <% end %>
-      <%= field_set_tag 'Going to the reception?' do %>
-        <%= builder.radio_button(:reception, "yes") %>
+      <%= field_set_tag 'Going to the reception?', :class => "questions" do %>
+        <%= builder.radio_button(:reception, "yes", :checked => true) %>
         <%= builder.label(:reception_yes, "Yes") %>
         <%= builder.radio_button(:reception, "no") %>
         <%= builder.label(:reception_no, "No") %>
@@ -54,10 +54,11 @@
     <% end %>
     <p><%= f.link_to_add "Add a guest", :guests %></p>
     <% end %>
-     <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
+     <%= field_set_tag 'Comment', :class => "clear leg span-11 prepend-1 push-1 last prepend-top" do %>
+    <%= f.text_area :comment %>
+    <% end %>
   </div>
-  <div class="actions">
+  <div class="actions clear prepend-1">
     <%= f.submit %>
   </div>
 <% end %>

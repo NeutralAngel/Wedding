@@ -1,6 +1,7 @@
 class RsvpsController < ApplicationController
 
   before_filter :authenticate, :only => [:edit, :update]
+  before_filter :title
   
   # GET /rsvps
   # GET /rsvps.json
@@ -93,6 +94,10 @@ class RsvpsController < ApplicationController
 
   def authenticate
     redirect_to login_path unless current_user
+  end
+
+  def title
+    @title = 'RSVP'
   end
 
 end

@@ -2,52 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@charset "utf-8";
-/* CSS Document */
-
-html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
+body {
+	background-color: #872424;
 }
 
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
-	display: block;
-}
-
-a {
-	text-decoration: none;
+#wrapper {
+	background-color: #872424;
 }
 
 nav ul {
 	list-style: none;
+	height: 50px;
+	display: inline;
 }
 
-header#mainHeader ul {
+header h1 {
 	float: left;
-	padding-top: 10px;
-	padding-left: 20px;
-	/*clear: both;*/
-}
-
-header#mainHeader h1 {
-	float: left;
-	width: 400px;
-	padding-top: 40px;
-	padding-left: 20px;
 }
 
 header#mainHeader ul li {
 	float: left;
-	
+	height: 30px;
 }
 
 header#mainHeader {
-	padding: 20px 0 20px 45px;
 	position: relative;
-	border-bottom: 2px solid #7f7f7f;
 	margin-top: 1em;
-	margin-bottom: 1em;
 }
 
 header#mainHeader ul li a{
@@ -55,189 +35,136 @@ header#mainHeader ul li a{
 	font-size: 1.2em;
 	color: #000;
 	padding: 0 20px;
-	border-right: 1px solid #000;
+	#border-right: 1px solid #000;
 	text-decoration: none;
+	position: relative;
+	top: 5px;
+}
+
+footer ul {
+	list-style: none;
+	height: 50px;
+	display: inline;
+}
+
+footer ul li a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	color: black;
+	padding: 0 20px;
+	#border-right: 1px solid #000;
+	text-decoration: none;
+	position: relative;
+	top: 5px;
+}
+
+footer ul li {
+	float: left;
+	height: 30px;
 }
 
 header#mainHeader ul li a.last{
 	border: none;
 }
 
-header#mainHeader img{
-	float: right;
-	padding-right:160px;
-}
 
 header#mainHeader ul li a:hover {
-	color: #DE9114;
+	color: #3B0606;
 }
 
 header#mainHeader ul li a.this {
+	color: #3B0606;
+	position:relative;
+	top: 4px;
+}
+
+header#mainHeader ul li.this {
 	color: #DE9114;
-}
-
-header#mainHeader {
-	height: 200px;
-}
-
-#wrapper {
-	width: 1100px;
-	margin: 0 auto;
-	padding: 0 50px;
-	text-align:left;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 3px solid #C6D173;
+	-moz-border-radius-topright: 20px;
+	border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	border-top-left-radius: 20px;
+	background-color: #C6D173;
+	margin: 0;
+	z-index: 9;
 	position: relative;
+	top: +1px;
 }
 
-body {
-	background: #E0F3B2;
-	text-align: center;
-	font: 100% Georgia, "Times New Roman", Times, serif;
+#main {
+	background-color: #C6D173;
+	#height: 500px;	
+	-moz-border-radius-topright: 20px;
+	border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	border-top-left-radius: 20px;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	
 }
 
-section#artist {
-	float: left;
-	width: 664px;
-	padding: 0 10px 0 25px;
-	margin-bottom: 2em;
-	border-right: 1px solid #7F7F7F;
+.leg {
+	#border: 8px ridge #872424;
+	border: 4px ridge #879428;
+	background: #FF9;
+	#border: solid 1px black;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding: 6px;
+
 }
 
-section#newsletterForm {
-	width: 664px;
-	padding: 0 10px 0 25px;
-	margin-bottom: 2em;
-	border-right: 1px solid #7F7F7F;
-	float: left;
+fieldset.leg legend {
+	#border: 8px ridge #872424;
+	border: 4px ridge #879428;
+	background: #FF9;
+	#border: solid 1px black;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding: 6px;
+
 }
 
+fieldset.questions legend {
+	#border: 8px ridge #872424;
+	border: 3px ridge #879428;
+	background: #FF9;
+	#border: solid 1px black;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding: 6px;
 
-section#newsletterForm form {
-	width: 664px;
 }
 
-section#newsletterForm img {
-	margin-bottom: 1em;
+.questions {
+	width: 200px;
+	border: 3px ridge #879428;
+	background: #FF9;
+	#border: solid 1px black;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding: 6px;
 }
 
-section#newsletterForm label {
-	background: #E0F3B2;
-	text-align: right;
-	width: 100px;
-	float: left;
-	margin-left: 10px;
-}
-
-section#newsletterForm input {
-	padding-left: 10px;
-	margin-left: 10px;
-	width:250px;
-}
-
-section#newsletterForm input#submit {
+input[type="submit"]
+{
+	color: #000;
+	background: #ffa20f;
+	border: 2px outset #d7b9c9;
 	width: 150px;
-	margin-top: 10px;
-	margin-left: 120px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding: 6px;
+	margin-bottom: 10px;
 }
-
-section#newsletterForm div {
-	border: 1px solid #7F7F7F;
-	width: 600px;
-	background: #E0F3B2;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 1em;
-	-moz-border-radius-topleft: 10px;
-	-moz-border-radius-topright: 0px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 0px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 0px; 
-}
-
-section#newsletterForm h1 {
-    color: #7F7F7F;
-    font-size: 2.5em;
-    font-weight: normal;
-    margin-bottom: 0.6em;
-}
-
-section#artist p {
-    color: #666666;
-    line-height: 1.6;
-    margin-bottom: 1em;
-	padding-right: 1em;
-}
-
-section#newsletterForm p {
-    color: #666666;
-    line-height: 1.6;
-    margin-bottom: 1em;
-	padding-right: 1em;
-}
-
-section#artist article#artistStatement {
-	border-right: 1px solid #7F7F7F;
-}
-
-section#artist article h1 {
-    color: #7F7F7F;
-    font-size: 2.5em;
-    font-weight: normal;
-    margin-bottom: 0.6em;
-}
-
-aside#artistInfo {
-	float: right;
-	width: 350px;
-	margin-bottom: 2em;
-}
-
-aside#artistInfo p {
-    color: #666666;
-    line-height: 1.6;
-    margin-bottom: 1em;
-	padding-right: 1em;
-}
-
-aside#artistInfo img {
-	margin-bottom: 1em;
-}
-
-header#mainHeader nav h1{
-	position: absolute;
-	left: -2000em;
-}
-
-#artistStatement { 
-  	float: left;
-	width: 316px;
-}
-
-aside#artistInfo h1 {
-    color: #7F7F7F;
-    font-size: 2.5em;
-    font-weight: normal;
-    margin-bottom: 0.6em;
-}
-
-#upcomingShows { 
-	float: left;
-	width: 316px;
-	padding-left: 1em;
-}
-
-footer#pageFooter {
-	clear: both;
-	border-top: 2px solid #7f7f7f;
-	padding: 2em;
-}
-
-footer#pageFooter p {
-	text-align: center;
-	font-style: italic;
-	margin-bottom: 1em;
-	color: black;
-}
-

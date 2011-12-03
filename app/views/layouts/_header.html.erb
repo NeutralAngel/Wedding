@@ -1,24 +1,25 @@
-<header id="mainHeader">
-  <h1>Nathan and Julianne's Wedding</h1>
-  <nav id="mainNav">
+ <header id="mainHeader" class="span-24">
+  <h1 class="prepend-2">Nathan & Julianne</h1>
+  <h1 class="prepend-6 last">May 19th, 2012</h1>
+  <nav id="mainNav" class="prepend-5 clear">
    <ul id="siteNav">
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'home') %> >
        <%= link_to "Home", root_path, 
        {:class => ("this" if current_page?(:controller => 'pages', :action => 'home'))} %>
      </li>
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'rsvps', :action => 'new') %> >
        <%= link_to "RSVP", new_rsvp_path, {:class => ("this" if current_page?(:controller => 'rsvps', :action => 'new'))} %>
      </li>
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'wedding') %> >
        <%= link_to "Wedding", wedding_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'wedding'))} %>
      </li>
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'reception') %> >
        <%= link_to "Reception", reception_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'reception'))} %>
      </li>
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'registry') %> >
        <%= link_to "Registry", registry_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'registry'))} %>
      </li>
-     <li>
+     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'honeymoon') %> >
        <%= link_to "Honeymoon", honeymoon_path, {:class => 
          (if current_page?(:controller => 'pages', :action => 'honeymoon')
             "this last"
