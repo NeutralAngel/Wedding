@@ -1,7 +1,6 @@
  <header id="mainHeader" class="span-24">
-  <h1 class="prepend-2">Nathan & Julianne</h1>
-  <h1 class="prepend-6 last">May 19th, 2012</h1>
-  <nav id="mainNav" class="prepend-5 clear">
+  <%= image_tag "header.jpg", :class =>"prepend-2" %>
+  <nav id="mainNav" class="prepend-5">
    <ul id="siteNav">
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'home') %> >
        <%= link_to "Home", root_path, 
@@ -16,7 +15,6 @@
          elsif current_user && current_page?(:controller => 'rsvps', :action => 'edit', :id => current_user.rsvp_id)
            "this"
          end) %> >
-         
        <%= link_to "RSVP", new_rsvp_path, {:class => 
         (if current_page?(:controller => 'rsvps', :action => 'new')
            "this"

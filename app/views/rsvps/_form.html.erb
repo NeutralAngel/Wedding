@@ -18,7 +18,7 @@
       <p>
       <%= builder.label "Your Name" %><br />
       <%= builder.text_field :name, :onchange => "copyName()" %> <br />
-      <%= builder.label "Email" %><br />
+      <%= builder.label :email %><br />
       <%= builder.text_field :email %> <br />
       <%= builder.label :password %> <br />
       <%= builder.password_field :password %> <br />
@@ -28,12 +28,13 @@
       <% end %>
       <% end %>
    <% end %>
-     <%= field_set_tag 'Guests', :class => "clear leg span-9 prepend-1 push-1 last prepend-top" do %>
-     <%= f.fields_for :guests do |builder| %>
-      <p>
-      <%= builder.label "Name" %><br />
-      <%= builder.text_field :name %> <br />
-      <%= field_set_tag 'Going to the wedding?', :class => "questions" do %>
+     <%= field_set_tag 'Guests', :class => "clear leg span-20 prepend-1 push-1 last prepend-top" do %>
+     <%= f.fields_for :guests, do |builder| %>
+      <p class = "float-left guest-name">
+      <%= builder.label :name %>
+      <%= builder.text_field :name %>
+      </p>
+      <%= field_set_tag 'Going to the wedding?', :class => "questions float-left" do %>
         <%= builder.radio_button(:wedding, "yes", :checked => true) %>
         <%= builder.label(:wedding_yes, "Yes") %>
         <%= builder.radio_button(:wedding, "no") %>
@@ -41,7 +42,7 @@
         <%= builder.radio_button(:wedding, "maybe") %>
         <%= builder.label(:wedding_maybe, "Maybe") %>
       <% end %>
-      <%= field_set_tag 'Going to the reception?', :class => "questions" do %>
+      <%= field_set_tag 'Going to the reception?', :class => "questions float-left" do %>
         <%= builder.radio_button(:reception, "yes", :checked => true) %>
         <%= builder.label(:reception_yes, "Yes") %>
         <%= builder.radio_button(:reception, "no") %>
@@ -49,10 +50,10 @@
         <%= builder.radio_button(:reception, "maybe") %>
         <%= builder.label(:reception_maybe, "Maybe") %>
       <% end %>
-       <%= builder.link_to_remove "Remove this guest" %>
-      </p>
+       <%= builder.link_to_remove "Remove this guest", :id => "remove" %>
+     
     <% end %>
-    <p><%= f.link_to_add "Add a guest", :guests %></p>
+    <p><%= f.link_to_add "Add a guest", :guests, :id => "add" %></p>
     <% end %>
      <%= field_set_tag 'Comment', :class => "clear leg span-11 prepend-1 push-1 last prepend-top" do %>
     <%= f.text_area :comment %>

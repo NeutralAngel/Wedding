@@ -69,18 +69,18 @@ header#mainHeader ul li a:hover {
 }
 
 header#mainHeader ul li a.this {
-	color: #3B0606;
+	color: black;
 	position:relative;
-	top: 4px;
+	top: 2px;
 }
 
 header#mainHeader ul li.this {
 	color: black;
   font-weight:bold;
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
-	border-top: 1px solid #000;
-	border-bottom: 3px solid #EFF2D3;
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-top: 2px solid #000;
+  border-bottom: 3px solid #EFF2D3;
 	-moz-border-radius-topright: 20px;
 	border-top-right-radius: 20px;
 	-moz-border-radius-topleft: 20px;
@@ -89,9 +89,7 @@ header#mainHeader ul li.this {
 	margin: 0;
 	z-index: 9;
 	position: relative;
-	top: +1px;
-  background-image: url("../assets/daisy.png");
-  background-repeat: repeat-x;  
+	top: +2px;
 }
 
 #main {
@@ -104,10 +102,10 @@ header#mainHeader ul li.this {
 	border-bottom-right-radius: 20px;
 	-moz-border-radius-bottomleft: 20px;
 	border-bottom-left-radius: 20px;
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
   position: relative;
 }
 
@@ -155,7 +153,8 @@ fieldset.questions legend {
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
-	padding: 6px;
+	padding: 2px;
+  margin: 10px;
 }
 
 input[type="submit"]
@@ -198,6 +197,39 @@ img#polaroid {
 footer {
   clear: both;
 }
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+#add {
+ 
+}
+
+#remove {
+  clear: both;
+  display: block;
+}
+
+.guest-name {
+  margin-right: 10px;
+  position: relative;
+  top: 45px;
+}
+
+#daisy {
+  margin-right: 10px;
+  margin-top: 3px;
+  position: absolute;
+  left: 25px;
+  top: 15px
+
+}
+
 
 
   
