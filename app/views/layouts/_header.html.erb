@@ -7,9 +7,27 @@
        <%= link_to "Home", root_path, 
        {:class => ("this" if current_page?(:controller => 'pages', :action => 'home'))} %>
      </li>
-     <li class=<%= "this" if current_page?(:controller => 'rsvps', :action => 'new') %> >
-       <%= link_to "RSVP", new_rsvp_path, {:class => ("this" if current_page?(:controller => 'rsvps', :action => 'new'))} %>
+     
+     
+     
+     <li class=<%= 
+        (if current_page?(:controller => 'rsvps', :action => 'new')
+           "this"
+         elsif current_user && current_page?(:controller => 'rsvps', :action => 'edit', :id => current_user.rsvp_id)
+           "this"
+         end) %> >
+         
+       <%= link_to "RSVP", new_rsvp_path, {:class => 
+        (if current_page?(:controller => 'rsvps', :action => 'new')
+           "this"
+         elsif current_user && current_page?(:controller => 'rsvps', :action => 'edit', :id => current_user.rsvp_id)
+           "this"
+         end)} %>
+         
      </li>
+     
+     
+     
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'wedding') %> >
        <%= link_to "Wedding", wedding_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'wedding'))} %>
      </li>

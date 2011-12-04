@@ -10,11 +10,14 @@
 <body>
   <div id="wrapper" class="container">
   <%= render 'layouts/header' %>
-  <p id="notice"><%= notice%></p>
-  <div id="main" class="span-20 push-2 last">
+  <div id="main" class="span-24 last">
+  <p id="notice" class = "prepend-2 last"><%= notice%></p>
   <%= yield %>
-  </div>
   <%= render 'layouts/footer' %>
   </div>
+  <%= image_tag "flower.gif", :id => "flower" %>
+  </div>
 </body>
+<div class="prepend-top"></div>
+
 </html>
