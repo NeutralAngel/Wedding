@@ -56,7 +56,7 @@
     <% end %>
     <p><%= f.link_to_add "Add a guest", :guests, :id => "add" %></p>
     <% end %>
-      <%= field_set_tag 'Do we have your address?', :class => "leg span-11 prepend-1 push-1 last prepend-top address" do %>
+      <%= field_set_tag 'Do we have your address?', :class => "clear leg span-11 prepend-1 push-1 last prepend-top address" do %>
       <%= f.fields_for :user do |builder| %>
       <p>
       <%= builder.label "Address Line 1" %>
