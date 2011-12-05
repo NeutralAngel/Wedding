@@ -56,6 +56,22 @@
     <% end %>
     <p><%= f.link_to_add "Add a guest", :guests, :id => "add" %></p>
     <% end %>
+      <%= field_set_tag 'Do we have your address?', :class => "leg span-11 prepend-1 push-1 last prepend-top address" do %>
+      <%= f.fields_for :user do |builder| %>
+      <p>
+      <%= builder.label "Address Line 1" %>
+      <%= builder.text_field :address_line_1 %> <br />
+      <%= builder.label "Address Line 2" %>
+      <%= builder.text_field :address_line_2 %> <br />
+      <%= builder.label :city %> 
+      <%= builder.text_field :city %> <br />
+      <%= builder.label :state %> 
+      <%= builder.text_field :state %> <br />
+      <%= builder.label :zip %> 
+      <%= builder.text_field :zip %> <br />
+      </p>
+      <% end %>
+      <% end %>
      <%= field_set_tag 'Comment', :class => "clear leg span-11 prepend-1 push-1 last prepend-top" do %>
     <%= f.text_area :comment %>
     <% end %>
