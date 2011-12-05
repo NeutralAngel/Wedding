@@ -51,6 +51,7 @@
         <%= builder.label(:reception_maybe, "Maybe") %>
       <% end %>
        <%= builder.link_to_remove "Remove this guest", :id => "remove" %>
+       <HR id="line" />
      
     <% end %>
     <p><%= f.link_to_add "Add a guest", :guests, :id => "add" %></p>
@@ -60,6 +61,6 @@
     <% end %>
   </div>
   <div class="actions clear prepend-1">
-    <%= f.submit %>
+    <%= f.submit "RSVP!!" %>
   </div>
 <% end %>

@@ -76,11 +76,11 @@ header#mainHeader ul li a.this {
 
 header#mainHeader ul li.this {
 	color: black;
-  font-weight:bold;
+  	font-weight:bold;
 	border-left: 2px solid #000;
 	border-right: 2px solid #000;
 	border-top: 2px solid #000;
-  border-bottom: 3px solid #EFF2D3;
+  	border-bottom: 3px solid #EFF2D3;
 	-moz-border-radius-topright: 20px;
 	border-top-right-radius: 20px;
 	-moz-border-radius-topleft: 20px;
@@ -118,7 +118,7 @@ header#mainHeader ul li.this {
 
 .leg {
 	border: 4px double #879428;
-	background: #FF9;
+	background: #efefa8;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -137,19 +137,19 @@ fieldset.leg legend {
 }
 
 fieldset.questions legend {
-	border: 1px solid #879428;
-	background: #FFFFF0;
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	padding: 6px;
+	border: 0px;
+	background: none;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	padding: 0px;
 
 }
 
 .questions {
 	width: 200px;
 	border: 1px solid #879428;
-	background: #FF9;
+	background: #efefa8;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -159,9 +159,9 @@ fieldset.questions legend {
 
 input[type="submit"]
 {
-	color: #000;
-	background: #ffa20f;
-	border: 2px outset #d7b9c9;
+	color: black;
+	background: #C6D173;
+	border: 2px outset #879428;
 	width: 150px;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -207,18 +207,21 @@ footer {
 }
 
 #add {
+	color: black;
+	margin-top: 20px;
  
 }
 
 #remove {
   clear: both;
   display: block;
+  margin-top: 20px;
+  color: black;
 }
 
 .guest-name {
   margin-right: 10px;
-  position: relative;
-  top: 45px;
+  margin-top: 20px;
 }
 
 #daisy {
@@ -228,6 +231,16 @@ footer {
   left: 25px;
   top: 15px
 
+}
+
+#line {
+  	border: 0;
+	height: 1px; 
+	color: #C6D173;
+	background-color: #C6D173;
+	margin-top: 20px;
+	width: 90%;
+	text-align: center;
 }
 
 
