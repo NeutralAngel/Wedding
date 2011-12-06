@@ -200,6 +200,7 @@ img#polaroid {
 
 footer {
   clear: both;
+  padding: 3em;
 }
 
 .float-left {
@@ -259,5 +260,41 @@ footer {
 	margin-top: .5em;
 }
 
+.list-none {
+	list-style: none;
+}
 
-  
+#table-5 {
+	background-color: #C6D173;
+	padding: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid black;
+	width: 80%;
+}
+#table-5 td, #table-5 th {
+	padding: 1px 5px;
+}
+#table-5 thead th{
+	font: normal 15px Helvetica Neue,Helvetica,sans-serif;
+	text-shadow: 0 1px 0 white;
+	color: #999;
+	
+}
+#table-5 thead th {
+	text-align: left;
+}
+#table-5 td {
+	font-size: 14px;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {background-color:#EFF2D3;} 
+
+#table-5 tr:nth-child(odd) {
+	background-color: #C6D173;
+}
+
+thead th {
+	background-color: #EFF2D3;
+}

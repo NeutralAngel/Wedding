@@ -1,16 +1,46 @@
+
+<div class="prepend-1">
+<h1>Thanks for sending us your RSVP!</h1>
+<p>Please look over your information. If you need to correct anything
+you may <%= link_to 'edit', edit_rsvp_path(@rsvp) %> it now.<br />
+If something changes later, you can return to the site and login
+with your email and password to edit you RSVP.</p>
 <p>
-  <b>Comment:</b>
+  <h3>User:</h3>
+  <b>Name:</b>
+  <%= @rsvp.user.name %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @rsvp.user.email %>
+</p>
+<p>
+  <h3>Guests:</h3> 
+<table id="table-5" class="table">
+<thead><th>Name</th><th>Wedding</th><th>Reception</th></thead>
+<tbody id="argh">
+   <% for guest in @rsvp.guests %>
+     <tr><td><%=h guest.name %></td>
+         <td><%= guest.wedding.capitalize %></td>
+         <td><%= guest.reception.capitalize %></td>
+     </tr>
+   <% end %>
+</tbody>
+</table>
+<% if !@rsvp.user.address_line_1.empty? %>
+  <p>
+    <h3>Address:</h3>
+    <%= @rsvp.user.address_line_1 %>
+    <% if !@rsvp.user.address_line_2.empty? %>
+      <%= @rsvp.user.address_line_2 %>
+    <% end %>
+    <%= @rsvp.user.city %>, <%= @rsvp.user.state %>  <%= @rsvp.user.zip %>
+  </p>
+<% end %>
+<p>
+  <h3>Comment:</h3>
   <%= @rsvp.comment %>
 </p>
-<ul>
-    <li><%=h @rsvp.user.name %></li>
-    <li><%=h @rsvp.user.email %></li>
-    <% for guest in @rsvp.guests %>
-      <li><%=h guest.name %></li>
-      <li>Going to the wedding: <%=h guest.wedding %></li>
-      <li>Going to the reception: <%=h guest.reception %></li>
-    <% end %>
-</ul>
 
-<%= link_to 'Edit', edit_rsvp_path(@rsvp) %> |
-<%= link_to 'Back', rsvps_path %>
+<%= link_to 'Edit RSVP', edit_rsvp_path(@rsvp) %>
+</div>

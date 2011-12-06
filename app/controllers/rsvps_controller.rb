@@ -51,10 +51,10 @@ class RsvpsController < ApplicationController
       if @rsvp.save
         NewRsvpMailer.new_rsvp_created(@rsvp).deliver
         session[:user_id] = @rsvp.user.id 
-        format.html { redirect_to @rsvp, notice: 'Rsvp was successfully created.' }
+        format.html { redirect_to @rsvp, notice: 'RSVP was successfully created.' }
         format.json { render json: @rsvp, status: :created, location: @rsvp }
       else
-      	if @rsvp.errors.full_messages.include?("User email login")
+        if @rsvp.errors.full_messages.include?("User email login")
           redirect_to login_path, notice: 'That email already has an RSVP. Please login to edit your RSVP.' and return
         end
         format.html { render action: "new" }
