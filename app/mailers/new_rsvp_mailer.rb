@@ -3,6 +3,6 @@ class NewRsvpMailer < ActionMailer::Base
 
   def new_rsvp_created(rsvp)
     @rsvp = rsvp
-    mail(:to => "nathan.nontell@gmail.com", :subject => "New RSVP created!")
+    mail(:to => ["nathan.nontell@gmail.com","julianne.e.thompson@gmail.com"], :subject => "New RSVP created!")
   end
 end
