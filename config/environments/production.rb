@@ -59,4 +59,5 @@ Wedding::Application.configure do
   config.active_support.deprecation = :notify
   
   config.assets.precompile += %w( blueprint/screen.css blueprint/print.css blueprint/ie.css )
+  config.action_mailer.delivery_method = :smtp
 end
