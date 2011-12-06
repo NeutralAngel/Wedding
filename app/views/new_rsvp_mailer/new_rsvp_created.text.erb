@@ -1,0 +1,10 @@
+ <%= @rsvp.user.name %> just created a new RSVP.
+ 
+ <% for guest in @rsvp.guests %>
+   Guest:     <%= guest.name %>
+   Wedding:   <%= guest.wedding %>
+   Reception: <%= guest.reception %>
+   ----------
+ <% end %>
+
+ <%= @rsvp.comment %>
