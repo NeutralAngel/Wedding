@@ -1,23 +1,18 @@
-<h1>Listing rsvps</h1>
-
-<table>
-  <tr>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rsvps.each do |rsvp| %>
-  <tr>
-    <td><%= rsvp.comment %></td>
-    <td><%= link_to 'Show', rsvp %></td>
-    <td><%= link_to 'Edit', edit_rsvp_path(rsvp) %></td>
-    <td><%= link_to 'Destroy', rsvp, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<div class="prepend-1"
+<p>
+  <h1>Guests:</h1> 
+<table id="table-5" class="table">
+<thead><th>Name</th><th>Wedding</th><th>Reception</th></thead>
+<tbody>
+   <% @rsvps.each do |rsvp| %>
+   <% for guest in rsvp.guests %>
+     <tr><td><%=h guest.name %></td>
+         <td><%= guest.wedding.capitalize %></td>
+         <td><%= guest.reception.capitalize %></td>
+     </tr>
+   <% end %>
+   <% end %>
+</tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Rsvp', new_rsvp_path %>
+</p>
+</div>
