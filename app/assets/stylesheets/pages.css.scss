@@ -184,12 +184,16 @@ img#flower {
 }
 
 img#polaroid {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.99619470, M12=0.08715574, M21=-0.08715574, M22=0.99619470,sizingMethod='auto expand')";
-  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.99619470, M12=0.08715574, M21=-0.08715574, M22=0.99619470,sizingMethod='auto expand');
+  
   -moz-transform:  matrix(0.99619470, -0.08715574, 0.08715574, 0.99619470, 0, 0);
   -webkit-transform:  matrix(0.99619470, -0.08715574, 0.08715574, 0.99619470, 0, 0);
   -o-transform:  matrix(0.99619470, -0.08715574, 0.08715574, 0.99619470, 0, 0);
   position: relative;
+  
+  
+  
+  zoom: 1;
+    
   right: 120px;
   float: left;
 }
