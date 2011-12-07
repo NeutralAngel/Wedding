@@ -5,4 +5,9 @@ class NewRsvpMailer < ActionMailer::Base
     @rsvp = rsvp
     mail(:to => ["nathan.nontell@gmail.com","julianne.e.thompson@gmail.com"], :subject => "New RSVP created!")
   end
+
+  def new_user_created(user)
+    @user = user
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Thanks for RSVPing!")
+  end
 end

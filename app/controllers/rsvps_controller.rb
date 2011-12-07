@@ -50,6 +50,7 @@ class RsvpsController < ApplicationController
     respond_to do |format|
       if @rsvp.save
         NewRsvpMailer.new_rsvp_created(@rsvp).deliver
+        NewRsvpMailer.new_user_created(@rsvp.user).deliver
         session[:user_id] = @rsvp.user.id 
         format.html { redirect_to @rsvp, notice: 'RSVP was successfully created.' }
         format.json { render json: @rsvp, status: :created, location: @rsvp }
