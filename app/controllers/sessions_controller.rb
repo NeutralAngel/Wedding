@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @title = "Login"
   end
 
   def create
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to edit_rsvp_path(User.find(session[:user_id]).rsvp_id), :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
+      @title = "Login"
       render "new"
     end
   end
