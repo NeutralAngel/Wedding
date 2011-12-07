@@ -7,6 +7,10 @@ class RsvpsController < ApplicationController
   # GET /rsvps.json
   def index
     @rsvps = Rsvp.all
+    @wedding_yes = Guest.count(:all, :conditions => "wedding = 'yes'")
+    @reception_yes = Guest.count(:all, :conditions => "reception = 'yes'")
+    @wedding_maybe = Guest.count(:all, :conditions => "wedding = 'maybe'")
+    @reception_maybe = Guest.count(:all, :conditions => "reception = 'maybe'")
 
     respond_to do |format|
       format.html # index.html.erb
