@@ -45,7 +45,7 @@ class RsvpsController < ApplicationController
   # GET /rsvps/1/edit
   def edit
     @rsvp = Rsvp.find(params[:id])
- end
+  end
 
   # POST /rsvps
   # POST /rsvps.json
@@ -60,7 +60,8 @@ class RsvpsController < ApplicationController
         format.json { render json: @rsvp, status: :created, location: @rsvp }
       else
         if @rsvp.errors.full_messages.include?("User email login")
-          redirect_to login_path, notice: 'That email already has an RSVP. Please login to edit your RSVP.' and return
+          redirect_to login_path, 
+            notice: 'That email already has an RSVP. Please login to edit your RSVP.' and return
         end
         format.html { render action: "new" }
         format.json { render json: @rsvp.errors, status: :unprocessable_entity }
