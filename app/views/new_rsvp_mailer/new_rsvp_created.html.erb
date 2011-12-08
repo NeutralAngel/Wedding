@@ -1,0 +1,16 @@
+<p><%= @rsvp.user.name %> just created a new RSVP.</p>
+<p>
+	<h2>Guests</h2> 
+	<table style="table-layout:auto; border: 5px solid darkgreen; border-collapse:collapse; font-family: monaco; background-color: beige; font-size: small;">
+	<thead style="background-color: BurlyWood;"><th style="padding-left: 2em; padding-right: 2em;">Name</th><th style="padding-left: 2em; padding-right: 2em;">Wedding</th><th style="padding-left: 2em; padding-right: 2em;">Reception</th></thead>
+		<tbody>
+			 <% for guest in @rsvp.guests %>
+				 <tr><td style="border: 1px solid black; padding: 1em;"><%=h guest.name %></td>
+						 <td style="border: 1px solid black; padding-left: 2em; padding-right: 2em;"><%= guest.wedding.capitalize %></td>
+						 <td style="border: 1px solid black; padding-left: 2em; padding-right: 2em;"><%= guest.reception.capitalize %></td>
+				 </tr>
+			 <% end %>
+		</tbody>
+	</table>
+</p>
+<p><%= @rsvp.comment %></p>
