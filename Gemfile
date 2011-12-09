@@ -11,7 +11,7 @@ gem 'bcrypt-ruby'
 gem 'thin'
 
 group :development do
-  gem 'eventmachine', '1.0.0.beta.4.1', :group => :development
+  gem 'eventmachine', '1.0.0.beta.4.1'
 end
 
 # Gems used only for assets and not required
