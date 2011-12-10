@@ -314,6 +314,15 @@ thead th {
   margin-top: .5em;
 }
 
-.map {
+.map iframe{
 	border: 2px solid black;
+}
+
+
+#address h3 {
+	margin-bottom: 0;
+}
+
+#address {
+	margin-right: 20px; 
 }

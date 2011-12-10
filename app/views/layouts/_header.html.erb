@@ -1,7 +1,8 @@
  <header id="mainHeader" class="span-24">
-  <%= image_tag "header.png" %>
+  <% header = image_tag "header.png" %>
+  <%= link_to header, root_path %>
   <nav id="mainNav" class="prepend-5">
-   <ul id="siteNav">
+    <ul id="siteNav">
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'home') %> >
        <%= link_to "Home", root_path, 
        {:class => ("this" if current_page?(:controller => 'pages', :action => 'home'))} %>
