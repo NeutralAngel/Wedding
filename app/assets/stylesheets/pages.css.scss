@@ -77,11 +77,10 @@ header#mainHeader ul li a.this {
 
 header#mainHeader ul li.this {
 	color: black;
-  	font-weight:bold;
+ 	font-weight:bold;
 	border-left: 2px solid #000;
 	border-right: 2px solid #000;
 	border-top: 2px solid #000;
-  	border-bottom: 3px solid #EFF2D3;
 	-moz-border-radius-topright: 20px;
 	border-top-right-radius: 20px;
 	-moz-border-radius-topleft: 20px;
@@ -90,7 +89,7 @@ header#mainHeader ul li.this {
 	margin: 0;
 	z-index: 9;
 	position: relative;
-	top: +2px;
+	top: 2px;
 }
 
 #main {
