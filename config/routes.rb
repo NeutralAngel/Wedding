@@ -6,6 +6,7 @@ Wedding::Application.routes.draw do
   match "registry" => "pages#registry"
   match "reception" => "pages#reception"
   match "honeymoon" => "pages#honeymoon"
+  match "our_story" => "pages#our_story"
   match "login" => "sessions#new"
   match "logout" => "sessions#destroy"
 

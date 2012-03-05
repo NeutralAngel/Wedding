@@ -1,7 +1,7 @@
  <header id="mainHeader" class="span-24">
   <% header = image_tag "header.png" %>
   <%= link_to header, root_path %>
-  <nav id="mainNav" class="prepend-5">
+  <nav id="mainNav" class="prepend-3">
     <ul id="siteNav">
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'home') %> >
        <%= link_to "Home", root_path, 
@@ -36,6 +36,11 @@
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'registry') %> >
        <%= link_to "Registry", registry_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'registry'))} %>
      </li>
+
+      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'our_story') %> >
+       <%= link_to "Our Story", our_story_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'our_story'))} %>
+     </li>
+
      <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'honeymoon') %> >
        <%= link_to "Honeymoon", honeymoon_path, {:class => 
          (if current_page?(:controller => 'pages', :action => 'honeymoon')
@@ -44,6 +49,7 @@
             "last"
           end)} %>
      </li>
+  
    </ul>
  </nav>
 </header>

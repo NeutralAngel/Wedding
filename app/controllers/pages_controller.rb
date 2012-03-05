@@ -19,4 +19,8 @@ class PagesController < ApplicationController
     @title = "Honeymoon"
   end
 
+  def our_story
+    @title = "Our Story"
+  end
+
 end
