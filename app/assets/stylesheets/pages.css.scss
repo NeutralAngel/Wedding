@@ -350,14 +350,13 @@ thead th {
 	color: #7D7C7C;
 }
 
-#story p:first-letter { 
+#first_letter:first-letter {
   font-size: 1.7em; 
   font-weight: normal 
 }
 
 #rothfuss_talk_2007 {
   width: 300px;
-  height: 464px;
   float: right;
   margin-top: 0px;
   padding-left: 16px;
@@ -374,18 +373,7 @@ thead th {
   line-height: 100%;
 }
 
-#rothfuss_talk_2007 p:first-letter {
-  font-size: .9em;
-  font-weight: bold;
-}
-
-#NOTW_signed p:first-letter {
-  font-size: .9em;
-  font-weight: bold;
-}
-
-#engagement p:first-letter {
-  font-size: .9em;
-  font-weight: bold;
+#NOTW_signed {
+  padding-bottom: 10px;
 }
 
