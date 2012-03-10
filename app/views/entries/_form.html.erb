@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<%= field_set_tag 'Sign the guestbook', :class => "clear leg span-11 prepend-top" do %>
+<%= field_set_tag 'Sign the guestbook', :class => "clear leg span-11", :id => "guestb_form" do %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
