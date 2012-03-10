@@ -1,27 +1,22 @@
-<h1>Listing entries</h1>
+<div id="guestbook" class="prepend-1">
 
 <%= render 'form' %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Message</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @entries.each do |entry| %>
-  <tr>
-    <td><%= entry.name %></td>
-    <td><%= entry.message %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% @entry_title = entry.name + " - " + entry.created_at.strftime("%m/%d/%Y") %>
+<%= field_set_tag @entry_title, :class => "leg clear span-20" do %>
+<p id="first_letter">&lsquo;<%= entry.message =%>&rsquo;</p>
+  <% if signed_in? && current_user.email == "nathan.nontell@gmail.com" %>
+      <%= link_to 'Show', entry %>
+      <%= link_to 'Edit', edit_entry_path(entry) %>
+      <%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete %>
+  <% end %>
 <% end %>
-</table>
+  
+<% end %>
 
-<br />
 
-<%= link_to 'New Entry', new_entry_path %>
+
+</div>

@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entry = Entry.new
-    @entries = Entry.all
+    @entries = Entry.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

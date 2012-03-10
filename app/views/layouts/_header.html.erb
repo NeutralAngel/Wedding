@@ -41,9 +41,9 @@
        <%= link_to "Our Story", our_story_path, {:class => ("this" if current_page?(:controller => 'pages', :action => 'our_story'))} %>
      </li>
 
-     <li class=<%= "this" if current_page?(:controller => 'pages', :action => 'honeymoon') %> >
-       <%= link_to "Honeymoon", honeymoon_path, {:class => 
-         (if current_page?(:controller => 'pages', :action => 'honeymoon')
+     <li class=<%= "this" if current_page?(:controller => 'entries', :action => 'index') %> >
+       <%= link_to "Guestbook", guestbook_path, {:class => 
+         (if current_page?(:controller => 'entries', :action => 'index')
             "this last"
           else
             "last"
