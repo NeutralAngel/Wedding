@@ -12,6 +12,7 @@ Wedding::Application.routes.draw do
 
   resources :rsvps
   resources :sessions
+  resources :entries
 
 
 
