@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
   def index
     @entry = Entry.new
     @entries = Entry.order('created_at DESC')
+    @title = "Guestbook"
 
     respond_to do |format|
       format.html # index.html.erb
