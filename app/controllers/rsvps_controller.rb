@@ -2,6 +2,7 @@ class RsvpsController < ApplicationController
 
   before_filter :authenticate, :only => [:edit, :update]
   before_filter :title
+  http_basic_authenticate_with :name => "nathan", :password => "ruby42", :only => [:destroy]
   
   # GET /rsvps
   # GET /rsvps.json

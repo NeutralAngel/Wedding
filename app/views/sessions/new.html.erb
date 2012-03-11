@@ -1,26 +1,17 @@
 
-<div>
-  <% if flash[:alert] %>
-    <div id="error_explanation">
-    <p><%= flash[:alert] %></p>
-    </div>
-  <% end %>
-  <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
-  <% end %>
-  <%= yield %>
-</div>
-
 <%= field_set_tag 'Login', :class => "clear leg span-11 prepend-1 push-1 last prepend-top address" do %>
      <%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
   </div>
-  <div class="field">
+  <div class="field float-left", id="password">
     <%= label_tag :password %>
     <%= password_field_tag :password %>
   </div>
+  <p><%= link_to "Forgot password?", new_password_reset_path %></p>
+
+  
   <div class="actions login-submit"><%= submit_tag "Submit" %></div>
 <% end %>
  

@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
+  http_basic_authenticate_with :name => "nathan", :password => "ruby42", :only => [:destroy,:update]
   def index
     @entry = Entry.new
     @entries = Entry.order('created_at DESC')
