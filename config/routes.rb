@@ -13,8 +13,7 @@ Wedding::Application.routes.draw do
   resources :rsvps
   resources :sessions
   resources :entries
-
-
+  resources :password_resets
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

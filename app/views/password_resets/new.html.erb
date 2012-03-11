@@ -1,0 +1,12 @@
+
+<%= field_set_tag 'Password Reset', :class => "clear leg span-11 prepend-1 push-1 last prepend-top address" do %>
+     <%= form_tag password_resets_path do %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  
+  <div class="actions login-submit"><%= submit_tag "Reset Password" %></div>
+<% end %>
+ 
+<% end %>

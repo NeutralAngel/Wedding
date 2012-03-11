@@ -60,5 +60,5 @@ Wedding::Application.configure do
   
   config.assets.precompile += %w( blueprint/screen.css blueprint/print.css blueprint/ie.css )
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'njwedding.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'www.nathanandjulianne.com' }
 end
