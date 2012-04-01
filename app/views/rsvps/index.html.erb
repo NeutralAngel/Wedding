@@ -18,3 +18,19 @@
 <p>There are <%= @wedding_yes %> guests attending the wedding, and <%= @wedding_maybe %> guests who might be coming.
    There are <%= @reception_yes %> guests attending the reception, with an additional <%= @reception_maybe %> guests possible. </p>
 </div>
+<div class="prepend-1">
+<p>
+  <h1>Users:</h1> 
+<table id="table-5" class="table">
+<thead><th>Id</th><th>Email</th><th>RSVP</th></thead>
+<tbody>
+   <% @users.each do |user| %>
+     <tr><td><%= user.id %></td>
+         <td><%= user.email %></td>
+         <td><%= user.rsvp_id %></td>
+     </tr>
+   <% end %>
+</tbody>
+</table>
+</p>
+</div>
