@@ -76,9 +76,9 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
-    Entry.delete_all('created_at > ?', Date.today - 30)
+    #@entry = Entry.find(params[:id])
+    #@entry.destroy
+    Entry.delete_all(['created_at > ?', Date.today - 30])
 
     respond_to do |format|
       format.html { redirect_to entries_url }
