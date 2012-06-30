@@ -4,8 +4,7 @@ class EntriesController < ApplicationController
   http_basic_authenticate_with :name => "nathan", :password => "ruby42", :only => [:destroy,:update,:create]
   def index
     @entry = Entry.new
-    #@entries = Entry.order('created_at DESC')
-    @entries = Entry.where('created_at > ?', Date.today - 30)
+    @entries = Entry.order('created_at DESC')
     @title = "Guestbook"
 
     respond_to do |format|
@@ -76,9 +75,8 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
-    #@entry = Entry.find(params[:id])
-    #@entry.destroy
-    Entry.delete_all(['created_at > ?', Date.today - 30])
+    @entry = Entry.find(params[:id])
+    @entry.destroy
 
     respond_to do |format|
       format.html { redirect_to entries_url }
