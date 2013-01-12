@@ -38,7 +38,7 @@
      <%= field_set_tag 'Guests', :class => "clear leg span-20 prepend-1 push-1 last prepend-top" do %>
      <p id="guest-instruct">Please use the add guest link below to add the name of
         each guest that you are RSVPing for. Don't forget the kids!</p>
-     <%= f.fields_for :guests, do |builder| %>
+     <%= f.fields_for :guests do |builder| %>
       <p class = "float-left guest-name">
       <%= builder.label :name %>
       <%= builder.text_field :name %>
@@ -82,7 +82,7 @@
       <% end %>
       <% end %>
      <%= field_set_tag 'Comment', 
-                    :class => "clear leg span-11 prepend-1 push-1 last prepend-top", do %>
+                    :class => "clear leg span-11 prepend-1 push-1 last prepend-top" do %>
     <%= f.text_area :comment, 
                     :placeholder => "Any more information you'd like to give us? " +
                                     "Just want to say hello?" %>
