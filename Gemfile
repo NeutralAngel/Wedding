@@ -7,7 +7,7 @@ gem 'rails', '3.1.10'
 
 gem 'pg'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'thin'
 gem 'newrelic_rpm' , "3.5.4.33"
 
