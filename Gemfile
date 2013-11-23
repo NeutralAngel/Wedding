@@ -9,7 +9,7 @@ gem 'pg'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 gem 'bcrypt-ruby'
 gem 'thin'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm' , "3.5.4.33"
 
 # Gems used only for assets and not required
 # in production environments by default.
